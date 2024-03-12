@@ -1,5 +1,5 @@
 
-const { addIncome, calculateIncome } = require("../functions/income");
+const { addIncome, calculateIncome, calculateTax } = require("../functions/income");
 
 //Def array
 var incomeList = [];//placeholder list
@@ -12,6 +12,7 @@ beforeEach(() => {
 })
 
 afterEach(() => {
+    //Reset array after each test
     incomeList = []
 })
 
@@ -55,7 +56,7 @@ describe("Test for income calculation", () => {
         expect(result).toEqual(35000)
     })
 
-    test.only("Test Calculation of test array - after new item added", () => {
+    test("Test Calculation of test array - after new item added", () => {
 
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 });
         console.log("Test item added to array")
@@ -66,4 +67,22 @@ describe("Test for income calculation", () => {
         expect(result).toBe(50000)
     })
 
+    test("Test if my calculations work with decimals", () => {
+        incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 15000.56, bracket: 9.9, taxAmount: 1481, saves: 0 });
+
+        var result = calculateIncome(incomeList)
+        expect(result).toBeCLoseTo(50000.56) //avoid any decimal issues
+    })
+
+})
+
+//Write test for determinng & calculating tax bracket
+describe("Test Tax Bracket And Calculation", () => {
+    test.only("Determin Tax Bracket", () => {
+        incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 30000, bracket: 0, taxAmount: 0, saves: 0 })
+
+        incomeList[2] = calculateTax(incomeList[2])
+        console.log(incomeList[2])
+        expect(incomeList[2].taxAmount).toBeCloseTo(5400)
+    })
 })
