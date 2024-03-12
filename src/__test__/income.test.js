@@ -1,13 +1,14 @@
 
-const { addIncome } = require("../functions/income");
+const { addIncome, calculateIncome } = require("../functions/income");
 
 //Def array
 var incomeList = [];//placeholder list
 
 beforeEach(() => {
+    // creat test data/array
     // console.log("happens before everything")
-    incomeList.push({icon: '🐶', name: "John Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 1500})
-    incomeList.push({icon: '🐰', name: "Jane Doe", salary: 20000, bracket: 12.5, taxAmount: 2502, saves: 2000})
+    incomeList.push({ icon: '🐶', name: "John Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 1500 })
+    incomeList.push({ icon: '🐰', name: "Jane Doe", salary: 20000, bracket: 12.5, taxAmount: 2502, saves: 2000 })
 })
 
 afterEach(() => {
@@ -19,9 +20,9 @@ afterAll(() => {
 })
 
 //write tests for adding income
-describe("Test for adding a income, checking the length", () =>{
+describe("Test for adding a income, checking the length", () => {
     test("adding a new income:", () => {
-        var newIncome = {icon: "🐮", name: "Bon Doe", income: 15000, bracket: 9.9, taxAmount: 1481, saves: 0}
+        var newIncome = { icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 }
 
         console.log(incomeList.length)
         expect(incomeList.length).toEqual(2)
@@ -33,7 +34,7 @@ describe("Test for adding a income, checking the length", () =>{
 
     test("adding a new income, values stored correct", () => {
         console.log("adding a new income, values stored correct")
-        var newIncome = {icon: "🐮", name: "Bon Doe", income: 15000, bracket: 9.9, taxAmount: 1481, saves: 0}
+        var newIncome = { icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 }
 
         incomeList = addIncome(incomeList, newIncome)
 
@@ -45,6 +46,24 @@ describe("Test for adding a income, checking the length", () =>{
 })
 
 //write test for calculating our income
-describe("Test for income calculation", () =>{
-    
+describe("Test for income calculation", () => {
+
+    test("Test Calculation of test array - should be 35000", () => {
+        console.log("Test array being read/stored correctly")
+        var result = calculateIncome(incomeList)
+        console.log(incomeList.length)
+        expect(result).toEqual(35000)
+    })
+
+    test.only("Test Calculation of test array - after new item added", () => {
+
+        incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 });
+        console.log("Test item added to array")
+
+        var result = calculateIncome(incomeList)
+        console.log(result)
+        expect(result).toBeGreaterThan(35000)
+        expect(result).toBe(50000)
+    })
+
 })
