@@ -54,5 +54,5 @@ function calculateIncome(list) {
     return total;
 }
 
-export default { addIncome, calculateIncome, calculateTax } //for fron-end
+export { addIncome, calculateIncome, calculateTax } //for fron-end
 // module.exports = { addIncome, calculateIncome, calculateTax } // for back-end

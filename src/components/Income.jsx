@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PersonIncomeRow from './items/PersonIncomeRow'
 import { Button, Form } from 'react-bootstrap'
 import { dummyIncome, iconOptions } from '../utils'
+import { addIncome } from "../functions/income";
 
 function Income(props) {
 
@@ -17,7 +18,7 @@ function Income(props) {
 
     const handleClick = () => {
         // handle adding new income
-        // props.handleAddingNewIncome({ icon: icon, name: name, salary: parseInt(salary), bracket: 0, taxAmount: 0, saves: 0 })
+        handleAddingNewIncome({ icon: icon, name: name, salary: parseInt(salary), bracket: 0, taxAmount: 0, saves: 0 })
         // Reset input fields after adding
         setIcon("");
         setName("");
@@ -25,8 +26,10 @@ function Income(props) {
     };
 
     const handleAddingNewIncome = (newIncome) => {
+        console.log('Begin of handle')
         var newIncomeList = addIncome(incomes, newIncome)
         setIncomes(newIncomeList)
+        console.log('End of handle')
     }
 
     return (
