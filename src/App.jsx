@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -10,9 +11,22 @@ import { dummyCards, lastTotalCard } from './utils'
 import Savings from './components/Savings'
 import LastTotalCard from './components/items/LastTotalCard'
 import { Button } from 'react-bootstrap'
+import { addIncome, calculateTax } from './functions/income'
+// import {addIncome , calculateTax} from './functions/income'  
 
-function App() { 
-  
+function App() {
+
+  const [incomes, setIncomes] = useState([])
+
+  const handleAddingNewIncome = (newIncome) => {
+    console.log('Begin of handle')
+    var newIncomeList = calculateTax(newIncome)
+    // newIncomeList = addIncome(incomes, newIncomeList)
+    setIncomes([...incomes, newIncomeList])
+    console.log(newIncome)
+    // console.log('End of handle')
+  }
+
   return (
     <Container fluid>
       <Row >
@@ -27,7 +41,7 @@ function App() {
       <Row>
         <Col xs={12} sm={12} md={5}>
           <div className='card shadow-sm p-3 mb-4 bg-white rounded'>
-            <Income />
+            <Income incomes={incomes} handleAddNew={handleAddingNewIncome} />
           </div>
           <div className='card shadow-sm p-3 mb-4 bg-white rounded'>
             <Taxes />
@@ -44,13 +58,13 @@ function App() {
 
         <Col xs={12} md={3}>
           {dummyCards.map((total, index) => (
-              <div key={index} className='card shadow-sm p-3 mb-4 rounded'>
-                <TotalCard total={total} />
-              </div>
-          ))}
-            <div className='card shadow-sm p-3 mb-4 rounded last-total-card'>
-              <LastTotalCard total={lastTotalCard} />
+            <div key={index} className='card shadow-sm p-3 mb-4 rounded'>
+              <TotalCard total={total} />
             </div>
+          ))}
+          <div className='card shadow-sm p-3 mb-4 rounded last-total-card'>
+            <LastTotalCard total={lastTotalCard} />
+          </div>
         </Col>
       </Row>
     </Container>

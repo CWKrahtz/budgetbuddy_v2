@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import PersonIncomeRow from './items/PersonIncomeRow'
 import { Button, Form } from 'react-bootstrap'
 import { dummyIncome, iconOptions } from '../utils'
-import { addIncome, calculateTax } from "../functions/income";
 
-function Income(props) {
+function Income({incomes, handleAddNew}) {
 
     // var array = dummyIncome;
 
-    const [incomes, setIncomes] = useState([])
+    // const [incomes, setIncomes] = useState([])
     // setIncomes(array);
 
     // const {person, index} = props;
@@ -18,21 +17,21 @@ function Income(props) {
 
     const handleClick = () => {
         // handle adding new income
-        handleAddingNewIncome({ icon: icon, name: name, salary: parseInt(salary), bracket: 0, taxAmount: 0, saves: 0 })
+        handleAddNew({ icon: icon, name: name, salary: parseInt(salary), bracket: 0, taxAmount: 0, saves: 0 })
         // Reset input fields after adding
         setIcon("");
         setName("");
         setSalary(""); 
     };
 
-    const handleAddingNewIncome = (newIncome) => {
-        console.log('Begin of handle')
-        var newIncomeList = calculateTax(newIncome)
-        newIncomeList = addIncome(incomes, newIncome)
-        setIncomes(newIncomeList)
-        // console.log(newIncome)
-        console.log('End of handle')
-    }
+    // const handleAddingNewIncome = (newIncome) => {
+    //     console.log('Begin of handle')
+    //     var newIncomeList = calculateTax(newIncome)
+    //     newIncomeList = addIncome(incomes, newIncome)
+    //     setIncomes(newIncomeList)
+    //     // console.log(newIncome)
+    //     console.log('End of handle')
+    // }
 
     return (
         <div>
@@ -74,7 +73,7 @@ function Income(props) {
             <div className='income-outer hide-scroll'>
                 {/* <PersonIncomeRow /> */}
                 {incomes.map((item, index) => (
-                    <PersonIncomeRow handleAddingNewIncome={handleAddingNewIncome} key={index} index={index + 1} person={item} />
+                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} index={index + 1} person={item} />
                 ))}
             </div>
 
