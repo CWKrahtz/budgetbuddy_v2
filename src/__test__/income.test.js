@@ -71,7 +71,7 @@ describe("Test for income calculation", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 15000.56, bracket: 9.9, taxAmount: 1481, saves: 0 });
 
         var result = calculateIncome(incomeList)
-        expect(result).toBeCLoseTo(50000.56) //avoid any decimal issues
+        expect(result).toBeCloseTo(50000.56) //avoid any decimal issues
     })
 
 })

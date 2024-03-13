@@ -11,8 +11,8 @@ import Savings from './components/Savings'
 import LastTotalCard from './components/items/LastTotalCard'
 import { Button } from 'react-bootstrap'
 
-function App() {
-
+function App() { 
+  
   return (
     <Container fluid>
       <Row >
