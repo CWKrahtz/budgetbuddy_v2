@@ -78,7 +78,7 @@ describe("Test for income calculation", () => {
 
 //Write test for determinng & calculating tax bracket
 describe("Test Tax Bracket And Calculation", () => {
-    test.only("Determin Tax Bracket", () => {
+    test("Determin Tax Bracket", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 30000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
