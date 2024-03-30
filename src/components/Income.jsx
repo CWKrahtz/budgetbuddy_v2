@@ -19,7 +19,7 @@ function Income({incomes, handleAddNew}) {
         // handle adding new income
         handleAddNew({ icon: icon, name: name, salary: parseInt(salary), bracket: 0, taxAmount: 0, saves: 0 })
         // Reset input fields after adding
-        setIcon("");
+        setIcon("-");
         setName("");
         setSalary(""); 
     };

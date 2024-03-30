@@ -18,6 +18,8 @@ function App() {
 
   const [incomes, setIncomes] = useState([])
 
+  const [expenses, setExpenses] = useState([])
+
   const handleAddingNewIncome = (newIncome) => {
     // console.log('Begin of handle')
     var newIncomeList = calculateTax(newIncome)
@@ -26,6 +28,9 @@ function App() {
     // console.log('End of handle')
   }
   
+  const handleAddingNewExppence = (newExpense) => {
+    setExpenses([...expenses, newExpense])
+  }
   
 
   return (
@@ -53,14 +58,14 @@ function App() {
         </Col>
         <Col xs={12} md={4} >
           <div className='card shadow-sm p-3 mb-4 bg-white rounded'>
-            <Expenses />
+            <Expenses expenses={expenses} handleAddingNewE={handleAddingNewExppence}/>
           </div>
         </Col>
 
         <Col xs={12} md={3}>
           {dummyCards.map((total, index) => (
             <div key={index} className='card shadow-sm p-3 mb-4 rounded'>
-              <TotalCard total={total} incomes={incomes}/>
+              <TotalCard total={total} incomes={incomes} expenses={expenses}/>
             </div>
           ))}
           <div className='card shadow-sm p-3 mb-4 rounded last-total-card'>

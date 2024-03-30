@@ -2,7 +2,7 @@ import React from 'react'
 
 function SavingsBlock(props) {
     const {savings} = props
-    console.log(savings)
+    // console.log(savings)
   return (
     <div  className='card card-col p-2 row-savings'>
         <div className='card-row'>

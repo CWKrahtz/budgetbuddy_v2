@@ -42,7 +42,7 @@ function calculateTax(list) {
 
 //Add income to array
 function addIncome(list, newItem) {
-    console.log(list)
+    // console.log(list)
     return [...list, newItem]; //adding new item to list and terurning the new list
 }
 

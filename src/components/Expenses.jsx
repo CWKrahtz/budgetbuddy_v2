@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import ExpenseRow from './items/ExpenseRow'
 import { dummyExpenses } from '../utils'
 
-function Expenses(props) {
+function Expenses( {expenses, handleAddingNewE} ) {
+
+  const [title, setTitle] = useState("")
+  const [amount, setAmount] = useState("")
+
+  const handleClick = () => {
+    handleAddingNewE({ title: title, amount: parseInt(amount) })
+    setTitle("")
+    setAmount("")
+  };
 
   return (
     <div >
@@ -17,6 +26,7 @@ function Expenses(props) {
               name="title"
               placeholder='Expense Title'
               autoComplete="off"
+              onChange={(e) => setTitle(e.target.value)}
           />
           <Form.Control
               type="number"
@@ -25,14 +35,15 @@ function Expenses(props) {
               step="0.01"
               placeholder='0.00'
               autoComplete="off"
+              onChange={(e) => setAmount(e.target.value)}
           />
-          <Button className='add-expenses'>Add</Button>
+          <Button onClick={handleClick} className='add-expenses'>Add</Button>
       </div>
 
       {/* List */}
       <div className='expense-outer hide-scroll'>
-        {dummyExpenses.map((item, index) => (
-            <ExpenseRow key={index} expense={item} />
+        {expenses.map((item, index) => (
+            <ExpenseRow handleAddingNewE={handleAddingNewE} key={index} expenses={item} />
         ))}
       </div>
 
