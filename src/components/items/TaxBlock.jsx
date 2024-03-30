@@ -2,6 +2,7 @@ import React from 'react'
 
 function TaxBlock(props) {
     const {tax} = props
+    // console.log(props)
   return (
     <div className='card card-col p-2 row-tax'>
         <div className='card-row'>

@@ -1,38 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TaxBlock from './items/TaxBlock'
 import { dummyIncome, percentageOptions } from '../utils'
 import { Form } from 'react-bootstrap'
 import SavingsBlock from './items/SavingsBlock'
 
-function Savings(props) {
-  return (
-    <div>
-        <div className='title-row'>
-            <h3>Savings Calculation</h3>
-            <span>
-                <p>% you want to save</p>
-                <Form.Select
-                    id="percentage" 
-                    name="percentage" 
-                    defaultValue="-"
-                    autoComplete="off">
+function Savings({ incomes }) {
+
+    const [save, setSave] = useState("")
+
+    // console.log(incomes)
+
+    return (
+        <div>
+            <div className='title-row'>
+                <h3>Savings Calculation</h3>
+                <span>
+                    <p>% you want to save</p>
+                    <Form.Select
+                        id="percentage"
+                        name="percentage"
+                        defaultValue="-"
+                        autoComplete="off"
+                        onChange={(e) => setSave(e.target.value)}>
                         <option disabled>-</option>
                         {percentageOptions.map((amount, index) => (
                             <option key={index} value={amount}>{amount}%</option>
                         ))}
-            </Form.Select>
-            </span>
+                    </Form.Select>
+                </span>
+            </div>
+
+            {/* Update savings based on selected percentage */}
+            {save && incomes.map((item, index) => {
+                const newSaves = (parseInt(item.salary) * parseInt(save)) / 100;
+                item.saves = newSaves;
+                // incomes[index].saves = item.save;
+                return <SavingsBlock key={index} savings={item} />
+            })}
+
         </div>
-       
-        {/* List */}
-        <div className='scroll-row hide-scroll'>
-            {dummyIncome.map((item, index) => (
-                <SavingsBlock key={index} savings={item} />
-            ))}
-           
-        </div>
-    </div>
-  )
+    )
 }
 
 export default Savings

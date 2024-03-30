@@ -24,14 +24,7 @@ function Income({incomes, handleAddNew}) {
         setSalary(""); 
     };
 
-    // const handleAddingNewIncome = (newIncome) => {
-    //     console.log('Begin of handle')
-    //     var newIncomeList = calculateTax(newIncome)
-    //     newIncomeList = addIncome(incomes, newIncome)
-    //     setIncomes(newIncomeList)
-    //     // console.log(newIncome)
-    //     console.log('End of handle')
-    // }
+    // console.log(incomes)
 
     return (
         <div>
@@ -73,7 +66,7 @@ function Income({incomes, handleAddNew}) {
             <div className='income-outer hide-scroll'>
                 {/* <PersonIncomeRow /> */}
                 {incomes.map((item, index) => (
-                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} index={index + 1} person={item} />
+                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item} />
                 ))}
             </div>
 
