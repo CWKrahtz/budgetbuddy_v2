@@ -4,7 +4,7 @@ import { dummyIncome, percentageOptions } from '../utils'
 import { Form } from 'react-bootstrap'
 import SavingsBlock from './items/SavingsBlock'
 
-function Savings({ incomes }) {
+function Savings({ incomes, handleUpdateSavings }) {
 
     const [save, setSave] = useState("")
 
@@ -21,8 +21,11 @@ function Savings({ incomes }) {
                         name="percentage"
                         defaultValue="-"
                         autoComplete="off"
-                        onChange={(e) => setSave(e.target.value)}>
-                        <option disabled>-</option>
+                        onChange={(e) => {
+                          setSave(e.target.value);
+                          handleUpdateSavings(e.target.value);
+                        }}>
+                        <option>-</option>
                         {percentageOptions.map((amount, index) => (
                             <option key={index} value={amount}>{amount}%</option>
                         ))}

@@ -12,6 +12,7 @@ import Savings from './components/Savings'
 import LastTotalCard from './components/items/LastTotalCard'
 import { Button } from 'react-bootstrap'
 import { addIncome, calculateSave, calculateTax } from './functions/income'
+import { addExpens } from './functions/expenses'
 // import {addIncome , calculateTax} from './functions/income'  
 
 function App() {
@@ -21,17 +22,23 @@ function App() {
   const [expenses, setExpenses] = useState([])
 
   const handleAddingNewIncome = (newIncome) => {
-    // console.log('Begin of handle')
     var newIncomeList = calculateTax(newIncome)
-    // newIncomeList = addIncome(incomes, newIncomeList)
-    setIncomes([...incomes, newIncomeList])
-    // console.log('End of handle')
+    newIncomeList = addIncome(incomes, newIncomeList) // Use addIncome function
+    setIncomes(newIncomeList)
   }
   
-  const handleAddingNewExppence = (newExpense) => {
-    setExpenses([...expenses, newExpense])
+  const handleAddingNewExpense = (newExpense) => {
+    var newExpenseList = addExpens(expenses, newExpense)
+    setExpenses(newExpenseList)
   }
   
+  const handleUpdateSavings = (percentage) => {
+    const updatedIncomes = incomes.map(income => ({
+      ...income,
+      saves: (income.salary * percentage) / 100
+    }));
+    setIncomes(updatedIncomes);
+  };
 
   return (
     <Container fluid>
@@ -53,12 +60,12 @@ function App() {
             <Taxes incomes={incomes}/>
           </div>
           <div className='card shadow-sm p-3 mb-4 bg-white rounded'>
-            <Savings incomes={incomes}/>
+            <Savings incomes={incomes} handleUpdateSavings={handleUpdateSavings}/>
           </div>
         </Col>
         <Col xs={12} md={4} >
           <div className='card shadow-sm p-3 mb-4 bg-white rounded'>
-            <Expenses expenses={expenses} handleAddingNewE={handleAddingNewExppence}/>
+            <Expenses expenses={expenses} handleAddingNewE={handleAddingNewExpense}/>
           </div>
         </Col>
 

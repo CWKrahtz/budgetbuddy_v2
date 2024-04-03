@@ -23,6 +23,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
           <Form.Control
               type="text"
               id="title"
+              value={title}
               name="title"
               placeholder='Expense Title'
               autoComplete="off"
@@ -31,6 +32,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
           <Form.Control
               type="number"
               id="expense"
+              value={amount}
               name="expense"
               step="0.01"
               placeholder='0.00'

@@ -5,7 +5,7 @@ import { calculateExpeses } from '../../functions/expenses'
 function TotalCard({total, incomes, expenses}) {
   // const {total} = props;
   // console.log(incomes)
-  console.log(expenses)
+  // console.log(expenses)
 
   if (total.label == "Total Income Before Tax") {
     total.total = calculateIncome(incomes)
@@ -13,7 +13,7 @@ function TotalCard({total, incomes, expenses}) {
     total.total = calculateIncomeAfterTax(incomes)
   } else if (total.label == "Total Expenses") {
     total.total = calculateExpeses(expenses)
-    console.log(expenses)
+    // console.log(expenses)
     // total.total = 0
   } else if (total.label == "Total Savings") {
     // console.log(incomes)

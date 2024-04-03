@@ -11,9 +11,11 @@ function Income({incomes, handleAddNew}) {
     // setIncomes(array);
 
     // const {person, index} = props;
-    const [icon, setIcon] = useState("")
+    const [icon, setIcon] = useState("-")
     const [name, setName] = useState("")
     const [salary, setSalary] = useState("")
+
+    // setIcon("-");
 
     const handleClick = () => {
         // handle adding new income
@@ -34,10 +36,10 @@ function Income({incomes, handleAddNew}) {
             <div className='form-row'>
                 <Form.Select
                     name="icon"
-                    defaultValue="-"
+                    value={icon} // Controlled: Use state variable
                     autoComplete="off"
                     onChange={(e) => setIcon(e.target.value)}>
-                    <option disabled>-</option>
+                    <option>-</option>
                     {iconOptions.map((icon, index) => (
                         <option key={index} value={icon}>{icon}</option>
                     ))}
@@ -46,6 +48,7 @@ function Income({incomes, handleAddNew}) {
                     type="text"
                     id="name"
                     name="name"
+                    value={name}
                     placeholder='Member Name'
                     autoComplete="off"
                     onChange={(e) => setName(e.target.value)}
@@ -54,6 +57,7 @@ function Income({incomes, handleAddNew}) {
                     type="number"
                     id="income"
                     name="income"
+                    value={salary}
                     step="0.01"
                     placeholder='0.00'
                     autoComplete="off"
