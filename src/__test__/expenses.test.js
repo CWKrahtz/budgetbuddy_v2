@@ -1,5 +1,5 @@
 //Imports
-const { addExpens } = require("../functions/expenses")
+const { addExpens, calculateExpenses } = require("../functions/expenses")
 
 //Def Variables
 var expenses = []
@@ -19,14 +19,38 @@ afterEach(() => {
 })
 
 //Adding Income
-describe("Test if added correctly to array", () => {
-    test("Add new expens", () => {
+describe("Test if added correctly to array - Expenses", () => {
 
+    test("Add new expens", () => {
         var newExpens = { title: "Rent", amount: 10500 }
         expenses = addExpens(expenses, newExpens)
         console.log(expenses)
         expect(expenses.length).toBe(6)
-        
+    })
+
+})
+
+describe("Test calculation of Expenses", () => {
+
+    test("Test Calculation of test array - should be 15896", () => {
+        console.log("Test array being read/stored correctly")
+        var result = calculateExpenses(expenses)
+        expect(result).toEqual(15896)
+    })
+
+    test("Test Calculation of test array - after new item added", () => {
+        expenses.push({ title: "Food", amount: 1500 })
+        console.log("Test item added to array")
+        var result = calculateExpenses(expenses)
+        console.log(result)
+        expect(result).toBeGreaterThan(15800)
+        expect(result).toBe(17396)
+    })
+
+    test("Test if my calculations work with decimals", () => {
+        expenses.push({ title: "Food", amount: 1500.56 })
+        var result = calculateExpenses(expenses)
+        expect(result).toBeCloseTo(17396.56) //avoid any decimal issues
     })
 
 })

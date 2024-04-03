@@ -82,5 +82,5 @@ function calculateSave(list) {
 }
 
 
-export { addIncome, calculateIncome, calculateTax, calculateIncomeAfterTax, calculateSave } //for fron-end
-// module.exports = { addIncome, calculateIncome, calculateTax } // for back-end
+// export { addIncome, calculateIncome, calculateTax, calculateIncomeAfterTax, calculateSave } //for fron-end
+module.exports = { addIncome, calculateIncome, calculateTax, calculateTotalTax, calculateSave, calculateIncomeAfterTax } // for back-end

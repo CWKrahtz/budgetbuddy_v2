@@ -1,6 +1,6 @@
 import React from 'react'
 import { calculateIncome, calculateIncomeAfterTax, calculateSave } from '../../functions/income'
-import { calculateExpeses } from '../../functions/expenses'
+import { calculateExpenses } from '../../functions/expenses'
 
 function TotalCard({total, incomes, expenses}) {
   // const {total} = props;
@@ -12,7 +12,7 @@ function TotalCard({total, incomes, expenses}) {
   } else if (total.label == "Total Income After Tax") {
     total.total = calculateIncomeAfterTax(incomes)
   } else if (total.label == "Total Expenses") {
-    total.total = calculateExpeses(expenses)
+    total.total = calculateExpenses(expenses)
     // console.log(expenses)
     // total.total = 0
   } else if (total.label == "Total Savings") {

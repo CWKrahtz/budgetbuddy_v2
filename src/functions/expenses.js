@@ -2,7 +2,7 @@ function addExpens(list, newList){
     return [...list, newList];
 }
 
-function calculateExpeses(list){
+function calculateExpenses(list){
     var total = 0
     for (let i = 0; i < list.length; i++) {
         total += list[i].amount;
@@ -11,4 +11,5 @@ function calculateExpeses(list){
     return total;
 }
 
-export { addExpens, calculateExpeses }
+// export { addExpens, calculateExpeses }
+module.exports = { addExpens, calculateExpenses }
