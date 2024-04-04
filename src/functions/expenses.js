@@ -11,5 +11,5 @@ function calculateExpenses(list){
     return total;
 }
 
-// export { addExpens, calculateExpeses }
-module.exports = { addExpens, calculateExpenses }
+export { addExpens, calculateExpenses }
+// module.exports = { addExpens, calculateExpenses }
