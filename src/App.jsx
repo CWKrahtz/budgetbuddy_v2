@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <Container fluid>
+    <Container fluid data-testid="outer-app">
       <Row >
         <Col xs={12} className='topbar p-3 mb-4'>
           <h2 className='title'>

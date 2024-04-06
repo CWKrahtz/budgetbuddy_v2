@@ -12,8 +12,8 @@ test("test fisrst default state", () => {
 
     //ACT
     var title = screen.getByText("Household Montly Salaries")
-    var icon = screen.getByLabelText("icon") //Finds input based on id
-    var name = screen.getByLabelText("name")
+    var icon = screen.getByLabelText("income-icon") //Finds input based on id
+    var name = screen.getByLabelText("income-name")
     var amount = screen.getByLabelText("income") 
     var button = screen.getByRole("button") //only 1 button, so should find it.
 
@@ -52,7 +52,7 @@ test("test the adding of a new income", async () => {
 
     // STEP 1: ADDED Name
     // 1. Find input field
-    var name = screen.getByLabelText("name") //Finds input based on aria label
+    var name = screen.getByLabelText("income-name") //Finds input based on aria label
     // 2. Clicking on the field, to start typing
     await user.click(name)
     // 3. Type your title
@@ -66,14 +66,14 @@ test("test the adding of a new income", async () => {
     await user.keyboard("5")
     expect(income).toHaveValue(5)
 
-    var icon = screen.getByLabelText("icon")
+    var icon = screen.getByLabelText("income-icon")
     await user.click(icon)
     await user.selectOptions(icon, "🐶")
     expect(icon).toHaveValue("🐶")
 
 
     // STEP 3: CLICK ADD BUTTON
-    var button = screen.getByText("Add") //only 1 button, so should find it.
+    var button = screen.getByText("Add Income") //only 1 button, so should find it.
     await user.click(button)
 
     //ASSERT

@@ -32,7 +32,7 @@ function Income({ incomes, handleAddNew }) {
                 <Form.Select
                     id="icon"
                     name="icon"
-                    aria-label="icon"
+                    aria-label="income-icon"
                     data-testid="icon"
                     value={icon} // Controlled: Use state variable
                     autoComplete="off"
@@ -46,7 +46,7 @@ function Income({ incomes, handleAddNew }) {
                     type="text"
                     id="name"
                     data-testid="name"
-                    aria-label="name"
+                    aria-label="income-name"
                     name="name"
                     value={name}
                     placeholder='Member Name'
@@ -65,7 +65,7 @@ function Income({ incomes, handleAddNew }) {
                     autoComplete="off"
                     onChange={(e) => setSalary(e.target.value)}
                 />
-                <Button onClick={handleClick} className='add-income'>Add</Button>
+                <Button onClick={handleClick} className='add-income' aria-label='income-button'>Add Income</Button>
             </div>
 
             {/* List */}

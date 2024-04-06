@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>10/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -169,32 +169,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,7 +221,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -254,24 +254,24 @@ import { addIncome, calculateSave, calculateTax } from './functions/income'
 import { addExpens } from './functions/expenses'
 // import {addIncome , calculateTax} from './functions/income'  
 &nbsp;
-function <span class="fstat-no" title="function not covered" >App(</span>) {
+function App() {
 &nbsp;
-  const [incomes, setIncomes] = <span class="cstat-no" title="statement not covered" >useState([])</span>
+  const [incomes, setIncomes] = useState([])
 &nbsp;
-  const [expenses, setExpenses] = <span class="cstat-no" title="statement not covered" >useState([])</span>
+  const [expenses, setExpenses] = useState([])
 &nbsp;
-  const handleAddingNewIncome = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewIncome) =&gt; {</span>
-    var newIncomeList = <span class="cstat-no" title="statement not covered" >calculateTax(newIncome)</span>
-<span class="cstat-no" title="statement not covered" >    newIncomeList = addIncome(incomes, newIncomeList) </span>// Use addIncome function
-<span class="cstat-no" title="statement not covered" >    setIncomes(newIncomeList)</span>
+  const handleAddingNewIncome = (newIncome) =&gt; {
+    var newIncomeList = calculateTax(newIncome)
+    newIncomeList = addIncome(incomes, newIncomeList) // Use addIncome function
+    setIncomes(newIncomeList)
   }
   
-  const handleAddingNewExpense = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewExpense) =&gt; {</span>
+  const handleAddingNewExpense = <span class="fstat-no" title="function not covered" >(n</span>ewExpense) =&gt; {
     var newExpenseList = <span class="cstat-no" title="statement not covered" >addExpens(expenses, newExpense)</span>
 <span class="cstat-no" title="statement not covered" >    setExpenses(newExpenseList)</span>
   }
   
-  const handleUpdateSavings = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>ercentage) =&gt; {</span>
+  const handleUpdateSavings = <span class="fstat-no" title="function not covered" >(p</span>ercentage) =&gt; {
     const updatedIncomes = <span class="cstat-no" title="statement not covered" >incomes.map(<span class="fstat-no" title="function not covered" >in</span>come =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
       ...income,
       saves: (income.salary * percentage) / 100
@@ -279,8 +279,8 @@ function <span class="fstat-no" title="function not covered" >App(</span>) {
 <span class="cstat-no" title="statement not covered" >    setIncomes(updatedIncomes);</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;Container fluid&gt;
+  return (
+    &lt;Container fluid data-testid="outer-app"&gt;
       &lt;Row &gt;
         &lt;Col xs={12} className='topbar p-3 mb-4'&gt;
           &lt;h2 className='title'&gt;
@@ -309,8 +309,8 @@ function <span class="fstat-no" title="function not covered" >App(</span>) {
         &lt;/Col&gt;
 &nbsp;
         &lt;Col xs={12} md={3}&gt;
-          {dummyCards.map(<span class="fstat-no" title="function not covered" >(t</span>otal, index) =&gt; (
-<span class="cstat-no" title="statement not covered" >            &lt;div key={index} className='card shadow-sm p-3 mb-4 rounded'&gt;</span>
+          {dummyCards.map((total, index) =&gt; (
+            &lt;div key={index} className='card shadow-sm p-3 mb-4 rounded'&gt;
               &lt;TotalCard total={total} incomes={incomes} expenses={expenses}/&gt;
             &lt;/div&gt;
           ))}
@@ -331,7 +331,7 @@ export default App
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-06T15:59:55.857Z
+                at 2024-04-06T18:43:49.472Z
             </div>
         <script src="../prettify.js"></script>
         <script>

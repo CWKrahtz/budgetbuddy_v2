@@ -25,16 +25,16 @@ describe("Test for adding a income, checking the length - Income", () => {
     test("adding a new income:", () => {
         var newIncome = { icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 }
 
-        console.log(incomeList.length)
+        // console.log(incomeList.length)
         expect(incomeList.length).toEqual(2)
 
         incomeList = addIncome(incomeList, newIncome);
-        console.log(incomeList.length)
+        // console.log(incomeList.length)
         expect(incomeList.length).toEqual(3);
     })
 
     test("adding a new income, values stored correct", () => {
-        console.log("adding a new income, values stored correct")
+        // console.log("adding a new income, values stored correct")
         var newIncome = { icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 }
 
         incomeList = addIncome(incomeList, newIncome)
@@ -50,19 +50,19 @@ describe("Test for adding a income, checking the length - Income", () => {
 describe("Test for income calculation -Income", () => {
 
     test("Test Calculation of test array - should be 35000", () => {
-        console.log("Test array being read/stored correctly")
+        // console.log("Test array being read/stored correctly")
         var result = calculateIncome(incomeList)
-        console.log(incomeList.length)
+        // console.log(incomeList.length)
         expect(result).toEqual(35000)
     })
 
     test("Test Calculation of test array - after new item added", () => {
 
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 15000, bracket: 9.9, taxAmount: 1481, saves: 0 });
-        console.log("Test item added to array")
+        // console.log("Test item added to array")
 
         var result = calculateIncome(incomeList)
-        console.log(result)
+        // console.log(result)
         expect(result).toBeGreaterThan(35000)
         expect(result).toBe(50000)
     })
@@ -82,7 +82,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 30000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(5400)
     })
 
@@ -90,7 +90,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 300000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(78000)
     })
 
@@ -98,7 +98,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 450000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(139500)
     })
 
@@ -106,7 +106,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 600000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(216000)
     })
 
@@ -114,7 +114,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 750000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(292500)
     })
 
@@ -122,7 +122,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 1000000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(410000)
     })
 
@@ -130,7 +130,7 @@ describe("Test Tax Bracket And Calculation - Income", () => {
         incomeList.push({ icon: "🐮", name: "Bon Doe", salary: 1900000, bracket: 0, taxAmount: 0, saves: 0 })
 
         incomeList[2] = calculateTax(incomeList[2])
-        console.log(incomeList[2])
+        // console.log(incomeList[2])
         expect(incomeList[2].taxAmount).toBeCloseTo(855000)
     })
 })

@@ -10,7 +10,7 @@ function PersonIncomeRow(props) {
             <div className='avatar'>
                 {person.icon}
             </div>
-            <p>{index}. {person.name}</p>
+            <p>{index+1}. {person.name}</p>
         </span>
         <p className='amount'>R {person.salary.toFixed(2)}</p>
     </div>

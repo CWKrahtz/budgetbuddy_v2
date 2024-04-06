@@ -24,7 +24,7 @@ describe("Test if added correctly to array - Expenses", () => {
     test("Add new expens", () => {
         var newExpens = { title: "Rent", amount: 10500 }
         expenses = addExpens(expenses, newExpens)
-        console.log(expenses)
+        // console.log(expenses)
         expect(expenses.length).toBe(6)
     })
 
@@ -33,16 +33,16 @@ describe("Test if added correctly to array - Expenses", () => {
 describe("Test calculation of Expenses", () => {
 
     test("Test Calculation of test array - should be 15896", () => {
-        console.log("Test array being read/stored correctly")
+        // console.log("Test array being read/stored correctly")
         var result = calculateExpenses(expenses)
         expect(result).toEqual(15896)
     })
 
     test("Test Calculation of test array - after new item added", () => {
         expenses.push({ title: "Food", amount: 1500 })
-        console.log("Test item added to array")
+        // console.log("Test item added to array")
         var result = calculateExpenses(expenses)
-        console.log(result)
+        // console.log(result)
         expect(result).toBeGreaterThan(15800)
         expect(result).toBe(17396)
     })
