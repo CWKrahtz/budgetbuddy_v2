@@ -15,7 +15,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
   };
 
   return (
-    <div >
+    <div data-testid="expense-card">
       <h3>Household Montly Expenses</h3>
       {/* Form */}
       
@@ -23,6 +23,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
           <Form.Control
               type="text"
               id="title"
+              aria-label='name'
               value={title}
               name="title"
               placeholder='Expense Title'
@@ -32,6 +33,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
           <Form.Control
               type="number"
               id="expense"
+              aria-label='expense'
               value={amount}
               name="expense"
               step="0.01"

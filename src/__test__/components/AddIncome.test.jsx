@@ -32,7 +32,7 @@ test("test fisrst default state", () => {
 })
 
 //asyncto await user events
-test("test the adding of a new todo", async () => {
+test("test the adding of a new income", async () => {
     //ARANGE
 
     var user = userEvent.setup() //Creates our "test"-user for our test environment
