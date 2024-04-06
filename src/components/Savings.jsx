@@ -11,7 +11,7 @@ function Savings({ incomes, handleUpdateSavings }) {
     // console.log(incomes)
 
     return (
-        <div>
+        <div data-testid="save-card">
             <div className='title-row'>
                 <h3>Savings Calculation</h3>
                 <span>
@@ -19,6 +19,7 @@ function Savings({ incomes, handleUpdateSavings }) {
                     <Form.Select
                         id="percentage"
                         name="percentage"
+                        aria-label='percentage'
                         defaultValue="-"
                         autoComplete="off"
                         onChange={(e) => {

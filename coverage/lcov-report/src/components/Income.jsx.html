@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -148,10 +148,7 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,18 +156,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,7 +173,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,10 +186,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">135x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,17 +231,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react'
 import PersonIncomeRow from './items/PersonIncomeRow'
 import { Button, Form } from 'react-bootstrap'
 import { dummyIncome, iconOptions } from '../utils'
 &nbsp;
-function Income({incomes, handleAddNew}) {
-&nbsp;
-    // var array = dummyIncome;
-&nbsp;
-    // const [incomes, setIncomes] = useState([])
-    // setIncomes(array);
+function Income({ incomes, handleAddNew }) {
 &nbsp;
     // const {person, index} = props;
     const [icon, setIcon] = useState("-")
@@ -264,13 +253,13 @@ function Income({incomes, handleAddNew}) {
         // Reset input fields after adding
         setIcon("-");
         setName("");
-        setSalary(""); 
+        setSalary("");
     };
 &nbsp;
     // console.log(incomes)
 &nbsp;
     return (
-        &lt;div data-testid="income-card"&gt;
+        &lt;div&gt;
             &lt;h3&gt;Household Montly Salaries&lt;/h3&gt;
 &nbsp;
             {/* Form */}
@@ -282,7 +271,7 @@ function Income({incomes, handleAddNew}) {
                     data-testid="icon"
                     value={icon} // Controlled: Use state variable
                     autoComplete="off"
-                    onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setIcon(e.target.value)}</span>&gt;
+                    onChange={(e) =&gt; setIcon(e.target.value)}&gt;
                     &lt;option&gt;-&lt;/option&gt;
                     {iconOptions.map((icon, index) =&gt; (
                         &lt;option key={index} value={icon}&gt;{icon}&lt;/option&gt;
@@ -318,7 +307,9 @@ function Income({incomes, handleAddNew}) {
             &lt;div className='income-outer hide-scroll'&gt;
                 {/* &lt;PersonIncomeRow /&gt; */}
                 {incomes.map((item, index) =&gt; (
-                    &lt;PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item}/&gt;
+                    &lt;div data-testid="income-card"&gt;
+                        &lt;PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item} index={index} /&gt;
+                    &lt;/div&gt;
                 ))}
             &lt;/div&gt;
 &nbsp;
@@ -334,7 +325,7 @@ export default Income</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-06T12:47:18.093Z
+                at 2024-04-06T15:59:55.857Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

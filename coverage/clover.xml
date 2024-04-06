@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1712407638175" clover="3.2.0">
-  <project timestamp="1712407638175" name="All files">
-    <metrics statements="120" coveredstatements="79" conditionals="22" coveredconditionals="12" methods="38" coveredmethods="21" elements="180" coveredelements="112" complexity="0" loc="120" ncloc="120" packages="4" files="15" classes="15"/>
+<coverage generated="1712419195969" clover="3.2.0">
+  <project timestamp="1712419195969" name="All files">
+    <metrics statements="120" coveredstatements="94" conditionals="22" coveredconditionals="14" methods="38" coveredmethods="30" elements="180" coveredelements="138" complexity="0" loc="120" ncloc="120" packages="4" files="15" classes="15"/>
     <package name="src">
       <metrics statements="21" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\App.jsx">
@@ -27,16 +27,16 @@
       </file>
       <file name="utils.js" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\utils.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="34" coveredstatements="23" conditionals="2" coveredconditionals="0" methods="18" coveredmethods="11"/>
+      <metrics statements="34" coveredstatements="34" conditionals="2" coveredconditionals="2" methods="18" coveredmethods="18"/>
       <file name="Expenses.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\Expenses.jsx">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="8" count="14" type="stmt"/>
@@ -51,41 +51,41 @@
         <line num="50" count="2" type="stmt"/>
       </file>
       <file name="Income.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\Income.jsx">
-        <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
-        <line num="14" count="14" type="stmt"/>
-        <line num="15" count="14" type="stmt"/>
-        <line num="16" count="14" type="stmt"/>
-        <line num="20" count="14" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="31" count="14" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="47" count="126" type="stmt"/>
-        <line num="59" count="9" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-        <line num="80" count="2" type="stmt"/>
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="9" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="26" count="15" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="135" type="stmt"/>
+        <line num="54" count="9" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
       </file>
       <file name="Savings.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\Savings.jsx">
-        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
       <file name="Taxes.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\Taxes.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.components.items">
-      <metrics statements="19" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <metrics statements="19" coveredstatements="8" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="4"/>
       <file name="ExpenseRow.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\items\ExpenseRow.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
@@ -102,14 +102,14 @@
         <line num="7" count="2" type="stmt"/>
       </file>
       <file name="SavingsBlock.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\items\SavingsBlock.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
       <file name="TaxBlock.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\items\TaxBlock.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
       <file name="TotalCard.jsx" path="C:\Users\Christian Krahtz\Desktop\DV 2024\budgetbuddy\budgetbuddy\src\components\items\TotalCard.jsx">
         <metrics statements="9" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="1" coveredmethods="0"/>

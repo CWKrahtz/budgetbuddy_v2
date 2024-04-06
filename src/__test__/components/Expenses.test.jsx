@@ -13,9 +13,11 @@ test("test Expenses When two Items have been added", () => {
 
     //find all the list items
     var expenseCard = screen.queryAllByTestId("expense-card")
-    console.log(expenseCard[0])
 
     //Assert
     expect(title).toBeInTheDocument()
     expect(expenseCard[0]).toHaveTextContent("Netflix")
+    expect(expenseCard[0]).toHaveTextContent("200")
+    expect(expenseCard[1]).toHaveTextContent("Petrol")
+    expect(expenseCard[1]).toHaveTextContent("2500")
 })

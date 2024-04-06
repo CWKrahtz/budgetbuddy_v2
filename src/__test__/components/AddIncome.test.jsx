@@ -66,6 +66,12 @@ test("test the adding of a new income", async () => {
     await user.keyboard("5")
     expect(income).toHaveValue(5)
 
+    var icon = screen.getByLabelText("icon")
+    await user.click(icon)
+    await user.selectOptions(icon, "🐶")
+    expect(icon).toHaveValue("🐶")
+
+
     // STEP 3: CLICK ADD BUTTON
     var button = screen.getByText("Add") //only 1 button, so should find it.
     await user.click(button)
@@ -75,7 +81,7 @@ test("test the adding of a new income", async () => {
     expect(incomes.length).toBe(1)
     expect(incomes[0].name).toBe("Test Text")
     expect(incomes[0].salary).toBe(5)
-    expect(incomes[0].icon).toBe('-')
+    expect(incomes[0].icon).toBe("🐶")
     expect(incomes[0].bracket).toBe(18)
 
     // //Check if input fields resets

@@ -11,9 +11,11 @@ function Taxes({incomes}) {
         <h3>Tax Bracket Calculation</h3>
 
         {/* List */}
-        <div className='scroll-row hide-scroll'>
+        <div className='scroll-row hide-scroll' >
             {incomes.map((item, index) => (
+              <div data-testid="taxes-card">
                 <TaxBlock key={index} index={index + 1} tax={item} />
+              </div>
             ))}
         </div>
     </div>

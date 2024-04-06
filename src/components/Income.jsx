@@ -3,12 +3,7 @@ import PersonIncomeRow from './items/PersonIncomeRow'
 import { Button, Form } from 'react-bootstrap'
 import { dummyIncome, iconOptions } from '../utils'
 
-function Income({incomes, handleAddNew}) {
-
-    // var array = dummyIncome;
-
-    // const [incomes, setIncomes] = useState([])
-    // setIncomes(array);
+function Income({ incomes, handleAddNew }) {
 
     // const {person, index} = props;
     const [icon, setIcon] = useState("-")
@@ -23,13 +18,13 @@ function Income({incomes, handleAddNew}) {
         // Reset input fields after adding
         setIcon("-");
         setName("");
-        setSalary(""); 
+        setSalary("");
     };
 
     // console.log(incomes)
 
     return (
-        <div data-testid="income-card">
+        <div>
             <h3>Household Montly Salaries</h3>
 
             {/* Form */}
@@ -77,7 +72,9 @@ function Income({incomes, handleAddNew}) {
             <div className='income-outer hide-scroll'>
                 {/* <PersonIncomeRow /> */}
                 {incomes.map((item, index) => (
-                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item}/>
+                    <div data-testid="income-card">
+                        <PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item} index={index} />
+                    </div>
                 ))}
             </div>
 

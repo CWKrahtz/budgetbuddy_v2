@@ -15,7 +15,7 @@ function Expenses( {expenses, handleAddingNewE} ) {
   };
 
   return (
-    <div data-testid="expense-card">
+    <div >
       <h3>Household Montly Expenses</h3>
       {/* Form */}
       
@@ -47,7 +47,9 @@ function Expenses( {expenses, handleAddingNewE} ) {
       {/* List */}
       <div className='expense-outer hide-scroll'>
         {expenses.map((item, index) => (
-            <ExpenseRow handleAddingNewE={handleAddingNewE} key={index} expenses={item} />
+          <div data-testid="expense-card">
+            <ExpenseRow handleAddingNewE={handleAddingNewE} key={index} index={index} expenses={item} />
+          </div>
         ))}
       </div>
 
