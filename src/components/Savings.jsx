@@ -38,7 +38,8 @@ function Savings({ incomes, handleUpdateSavings }) {
                 const newSaves = (parseInt(item.salary) * parseInt(save)) / 100;
                 item.saves = newSaves;
                 // incomes[index].saves = item.save;
-                return <SavingsBlock key={index} savings={item} />
+                // testid = will be used to find the element
+                return <SavingsBlock key={index} savings={item}/>
             })}
 
         </div>

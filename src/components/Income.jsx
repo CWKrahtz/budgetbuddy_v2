@@ -29,13 +29,16 @@ function Income({incomes, handleAddNew}) {
     // console.log(incomes)
 
     return (
-        <div>
+        <div data-testid="income-card">
             <h3>Household Montly Salaries</h3>
 
             {/* Form */}
             <div className='form-row'>
                 <Form.Select
+                    id="icon"
                     name="icon"
+                    aria-label="icon"
+                    data-testid="icon"
                     value={icon} // Controlled: Use state variable
                     autoComplete="off"
                     onChange={(e) => setIcon(e.target.value)}>
@@ -47,6 +50,8 @@ function Income({incomes, handleAddNew}) {
                 <Form.Control
                     type="text"
                     id="name"
+                    data-testid="name"
+                    aria-label="name"
                     name="name"
                     value={name}
                     placeholder='Member Name'
@@ -56,6 +61,8 @@ function Income({incomes, handleAddNew}) {
                 <Form.Control
                     type="number"
                     id="income"
+                    data-testid="income"
+                    aria-label="income"
                     name="income"
                     value={salary}
                     step="0.01"
@@ -70,7 +77,7 @@ function Income({incomes, handleAddNew}) {
             <div className='income-outer hide-scroll'>
                 {/* <PersonIncomeRow /> */}
                 {incomes.map((item, index) => (
-                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item} />
+                    <PersonIncomeRow handleAddNew={handleAddNew} key={index} person={item}/>
                 ))}
             </div>
 

@@ -1,5 +1,5 @@
 //Imports
-const { addExpens, calculateExpenses } = require("../functions/expenses")
+import { addExpens, calculateExpenses } from "../functions/expenses";
 
 //Def Variables
 var expenses = []

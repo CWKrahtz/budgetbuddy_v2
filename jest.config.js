@@ -1,10 +1,10 @@
 export default {
     collectCoverage : true,
-    collectCoverageForm: ['src/**/*.{js,jsx}'],
+    collectCoverageFrom: ['src/**/*.{js,jsx}'],
     coverageDirectory: 'coverage',
-    testEnvironment: 'jsdom',
-    setupFileAfterEnv: ['<rootDir>/jest.setup.js'],
-    moduleNameMapper: {
+    testEnvironment: 'jsdom',//jsdom for our frontend testing
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],//specify setup
+    moduleNameMapper: {//convery our css files to not break.
         '\\.(css|less|scss)$': 'identity-obj-proxy'
     }
 }

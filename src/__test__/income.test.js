@@ -1,5 +1,5 @@
 
-const { addIncome, calculateIncome, calculateTax, calculateTotalTax, calculateSave, calculateIncomeAfterTax } = require("../functions/income");
+import { addIncome, calculateIncome, calculateTax, calculateTotalTax, calculateSave, calculateIncomeAfterTax } from "../functions/income";
 
 //Def array
 var incomeList = [];//placeholder list
