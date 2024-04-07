@@ -17,11 +17,6 @@ test("test fisrst default state", () => {
     var amount = screen.getByLabelText("income") 
     var button = screen.getByRole("button") //only 1 button, so should find it.
 
-    // console.log(title)
-    // console.log(icon)
-    // console.log(name)
-    // console.log(amount)
-
     //ASSERT
     expect(title).toBeInTheDocument()
     expect(icon).toBeInTheDocument()
@@ -37,7 +32,6 @@ test("test the adding of a new income", async () => {
 
     var user = userEvent.setup() //Creates our "test"-user for our test environment
 
-    //replicating the adding functionality from my App Component
     var incomes = [] //todos array list
 
     const handleAddingNewIncome = (newIncome) => {
@@ -48,16 +42,9 @@ test("test the adding of a new income", async () => {
 
     render(<Income incomes={incomes} handleAddNew={handleAddingNewIncome} />)
 
-    //ACT - follow the flow of the user journey
-
-    // STEP 1: ADDED Name
-    // 1. Find input field
     var name = screen.getByLabelText("income-name") //Finds input based on aria label
-    // 2. Clicking on the field, to start typing
     await user.click(name)
-    // 3. Type your title
     await user.keyboard("Test Text")
-    // 4. Test - is the value of our input field correct
     expect(name).toHaveValue("Test Text")
 
     // STEP 2: ADDED income
